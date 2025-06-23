@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leap Embed</title>
+</head>
+<body>
+  <script id="leap-embed-script">
+    const currentScript = document.getElementById("leap-embed-script");
+    if (currentScript) {
+      let e = new URLSearchParams(window.top.location.search),
+          t = e.get("leap_tag"),
+          r = new URL("https://tickets.buzztix.com/embed/afe45daf-35d0-4a15-a5c0-87e6fc7526a7?withAdvMktHelper=1");
+      t && (r.pathname += "/tag/" + t);
+      let c = document.createElement("script");
+      c.src = r.toString();
+      currentScript.parentNode.insertBefore(c, currentScript.nextSibling);
+    }
+  </script>
+</body>
+</html>
